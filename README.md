@@ -1,4 +1,3 @@
-# projeto-logica
-## Projeto final de lógica de programação
+# Projeto final de lógica de programação
 
 ### Diretrizes:
