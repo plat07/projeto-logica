@@ -1,36 +1,9 @@
 programa
 {
-// Escreva um programa para gerenciar as médias das notas de 20 estudantes. 
-//O programa deve ler o número de identificação, as 3 notas obtidas por um estudante nas 3
-//verificações de aprendizagem e a média dos exercícios que fazem parte da avaliação.
-//Em seguida, calcular a média de aproveitamento, usando a fórmula seguinte:
-
-//MA = (nota1 + 2 ∙ nota2 + 3 ∙ nota3 + ME)/7.
-
-//A atribuição dos conceitos obedece a tabela abaixo:
-//Média de aproveitamento Conceito
-//Maior ou igual 9,0 e menor ou igual a 10,0 A
-//Maior ou igual a 7,5 e menor que 9,0 B
-//Maior ou igual a 6,0 e menor que 7,5 C
-//Maior ou igual a 4,0 e menor que 6,0 D
-//Menor que 4,0 E
-
-//Apos a leitura dos dados, o programa deve, por meio de um menu, executar as seguintes etapas:
-//a) Cadastrar as médias dos 20 estudantes.
-//b) Apresentar o número de estudantes que tiveram o aproveitamento com conceitos A e B.
-//c) Apresentar o número de estudantes que tiveram o aproveitamento com conceitos C e D.
-//d) Apresentar o número de estudantes que tiveram o aproveitamento com conceito abaixo de D.
-//e) Apresentar o número de estudantes que tiveram o aproveitamento com conceito acima de B.
-//f) Sair do programa.
-
-/* IMPLEMENTAÇÕES PENDENTES:
- 	* não deixar o usuário inserir notas menores que 0 ou maiores que 10
-*/
 
 	funcao inicio()
 	{
-		//real vetorMedias[20] = {0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1}
-		real vetorMedias[3] = {0.1, 0.1, 0.1}  // variável para testes -EXCLUIR FUTURAMENTE-
+		real vetorMedias[20] = {0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1}
 		real mediaAproveitamento, nota1, nota2, nota3, mediaExercicios
 		inteiro estudantesAeB = 0, estudantesCeD = 0, estudantesE = 0, estudantesA = 0
     		inteiro id, contador, opcao
@@ -42,7 +15,7 @@ programa
 
     			escolha(opcao) {
     				caso 1: {
-    					para (contador = 1; contador <= 3; contador ++) {
+    					para (contador = 1; contador <= 20; contador ++) {
     						limpa()
     						escreva("\nInsira o número de identificação do aluno: ")
     						leia(id) 
@@ -75,8 +48,8 @@ programa
     						//o indice é [contador - 1] pois os vetores iniciam do indice 0 e não do indice 1 (como o contador)
     						vetorMedias[contador - 1] = mediaAproveitamento
     						conceito = determinarConceito(mediaAproveitamento)
-    						/*As quatro linhas de código a seguir vão comparar conceito e incrementar X variável.
-    					  	Para exibição nos demais itens de menu de opções.*/
+    						/*As quatro linhas de código a seguir vão comparar conceito e incrementar X variável,
+    					  	para exibição nos demais itens de menu de opções.*/
     						incrementarAeB(conceito, estudantesAeB)
     						incrementarCeD(conceito, estudantesCeD)
     						contarE(conceito, estudantesE)
